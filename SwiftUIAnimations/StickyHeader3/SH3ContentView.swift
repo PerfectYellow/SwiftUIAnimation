@@ -9,7 +9,13 @@ import SwiftUI
 
 struct SH3ContentView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geo in
+            let size = geo.size
+            let safeAreaInsets = geo.safeAreaInsets
+            
+            SHHome(size: size, safeArea: safeAreaInsets)
+                .ignoresSafeArea(.all, edges: .top)
+        }
     }
 }
 
