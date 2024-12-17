@@ -11,11 +11,13 @@ import SwiftUI
 struct SwiftUIAnimationsApp: App {
     var body: some Scene {
         WindowGroup {
-//                SH3ContentView()
+//            SH3ContentView()
             
-            RootView {
-                UOContentView()
-            }
+//            RootView {
+//                UOContentView()
+//            }
+            
+            HAContentView()
         }
     }
 }
