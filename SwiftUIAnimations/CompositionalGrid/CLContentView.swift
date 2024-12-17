@@ -18,8 +18,8 @@ struct CLContentView: View {
                     
                     CompositionalLayout(count: $count) {
                         ForEach(0..<50, id:\.self) { index in
-                            Rectangle()
-                                .fill(.pink)
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill(.pink.gradient)
                                 .overlay {
                                     Text("\(index)")
                                         .font(.largeTitle.bold())
