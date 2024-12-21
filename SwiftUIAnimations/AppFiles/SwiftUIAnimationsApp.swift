@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct SwiftUIAnimationsApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
 //            SH3ContentView()
@@ -17,7 +19,11 @@ struct SwiftUIAnimationsApp: App {
 //                UOContentView()
 //            }
             
-            HAContentView()
+//            HAContentView()
+            
+            RootView {
+                MPContentView()
+            }
         }
     }
 }
