@@ -15,7 +15,7 @@ struct ProfileModel: Identifiable {
     var lastActive: String
 }
 
-var profileSample: [ProfileModel] = [
+let profileSample: [ProfileModel] = [
     .init(userName: "Jimmy", profilePicture: "ImageA", lastMsg: "Hi Mohammad", lastActive: "10:10 PM"),
     .init(userName: "Alex", profilePicture: "ImageB", lastMsg: "Hi Mohammad", lastActive: "11:11 AM"),
     .init(userName: "Harry", profilePicture: "ImageC", lastMsg: "Hi Mohammad", lastActive: "14:14 AM"),

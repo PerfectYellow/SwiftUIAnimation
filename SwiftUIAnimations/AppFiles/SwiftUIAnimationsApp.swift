@@ -6,10 +6,20 @@
 //
 
 import SwiftUI
+import Combine
 
 @main
 struct SwiftUIAnimationsApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    var cancelable: Set<AnyCancellable> = Set()
+    
+    init() {
+        NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification).sink { notification in
+            print(notification.name.rawValue)
+            print(UIDevice.current.orientation.rawValue)
+        }
+        .store(in: &cancelable)
+    }
     
     var body: some Scene {
         WindowGroup {

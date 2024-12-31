@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentOffsetKey: PreferenceKey {
     typealias Value = CGFloat
-    static var defaultValue: CGFloat = .zero
+    static let defaultValue: CGFloat = .zero
     
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
         value += nextValue()
@@ -55,7 +55,11 @@ struct DetailsView<Content: View>: View {
                 .scrollIndicators(.hidden)
                 .coordinateSpace(name: "scrollview")
                 .onPreferenceChange(ContentOffsetKey.self) { value in
-                    self.contentOffset = value
+                    Task { @MainActor in
+//                        await MainActor.run {
+                            self.contentOffset = value
+//                        }
+                    }
                 }
             }
             
