@@ -251,47 +251,7 @@ struct DSCustomTextField: View {
     }
 }
 
-import SwiftUI
-
-struct TestView: View {
-    @State private var showSheet: Bool = false
-    @State private var selectedDetent: PresentationDetent = .medium
-    @State private var showContentUnavailable: Bool = false
-    
-    var body: some View {
-        VStack {
-            Button("Hi Sheet") {
-                showSheet.toggle()
-            }
-        }
-        .sheet(isPresented: $showSheet) {
-            NavigationStack {
-                VStack {
-                    if showContentUnavailable {
-                        ContentUnavailableView("Oops", image: "camera")
-                    } else {
-                        NavigationLink("Push me") {
-                            ContentUnavailableView("Oops", image: "camera")
-                        }
-//                        .onTapGesture {
-//                            // Smoothly switch to large detent before navigating
-//                            withAnimation {
-//                                selectedDetent = .large
-//                            }
-//                            
-//                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-//                                showContentUnavailable = true
-//                            }
-//                        }
-                    }
-                }
-                .presentationDetents([.medium, .large], selection: $selectedDetent)
-            }
-        }
-    }
-}
 
 #Preview {
-//    TestView()
     DSContentView()
 }

@@ -15,8 +15,8 @@ struct SwiftUIAnimationsApp: App {
     
     init() {
         NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification).sink { notification in
-            print(notification.name.rawValue)
-            print(UIDevice.current.orientation.rawValue)
+//            print(notification.name.rawValue)
+//            print(UIDevice.current.orientation.rawValue)
         }
         .store(in: &cancelable)
     }
